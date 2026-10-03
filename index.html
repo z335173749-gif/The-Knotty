@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="locked">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Crochet Studio</title>
+  <meta name="description" content="A cinematic 3D crochet studio: yarn, loops and handmade work.">
+  <meta name="theme-color" content="#f3ead9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip" href="#scroller">Skip to content</a>
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <header class="ui">
+    <p class="brand" id="site-title">CROCHET STUDIO</p>
+    <button id="sound-toggle" class="pill" type="button" aria-pressed="true" aria-label="Toggle sound">SOUND ON</button>
+  </header>
+
+  <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <p class="gate-kicker" id="gate-owner"></p>
+    <h1 id="gate-title">Step into the studio</h1>
+    <button id="enter-btn" class="btn big" type="button" data-silent>ENTER THE STUDIO</button>
+    <p class="gate-note">Best with sound. Scroll to move through the room.</p>
+  </div>
+
+  <main id="scroller">
+    <section class="panel" data-sec="0" aria-label="Introduction">
+      <h1 class="display">CRAFTED<br>WITH<br>THREAD.</h1>
+      <p class="lede" id="tagline">WHERE EVERY LOOP BECOMES SOMETHING MORE.</p>
+    </section>
+
+    <section class="panel" data-sec="1" aria-label="About">
+      <h2 class="display">THE ART OF<br>THE LOOP.</h2>
+      <p class="body" id="about-text"></p>
+    </section>
+
+    <section class="panel" data-sec="2" aria-label="Process">
+      <h2 class="display">ONE LOOP.<br>THEN ANOTHER.</h2>
+      <p class="body" id="process-text"></p>
+    </section>
+
+    <section class="panel wide" data-sec="3" aria-label="Selected work">
+      <h2 class="section-title">Selected work</h2>
+      <div class="cards" id="work-grid"></div>
+    </section>
+
+    <section class="panel side" data-sec="4" aria-label="Collection and websites">
+      <h2 class="section-title">The collection</h2>
+      <ul class="sites" id="site-list"></ul>
+    </section>
+
+    <section class="panel" data-sec="5" aria-label="Contact">
+      <h2 class="display">MADE BY HAND.<br>MADE TO LAST.</h2>
+      <ul class="socials" id="socials"></ul>
+      <p class="foot" id="footer"></p>
+    </section>
+  </main>
+
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <div class="scroll-hint" id="scroll-hint" aria-hidden="true">SCROLL<span></span></div>
+  <p id="fallback" role="status" hidden>The 3D scene could not load (WebGL or the CDN may be blocked). The content below still works.</p>
+  <noscript><p class="noscript">This experience needs JavaScript and WebGL.</p></noscript>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
